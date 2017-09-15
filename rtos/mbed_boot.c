@@ -159,6 +159,7 @@
  * -Interrupt stack can be explicitly placed by defining both ISR_STACK_START and ISR_STACK_SIZE
  *
  */
+#if defined(MBED_CONF_RTOS_PRESENT)
 
 #include <stdlib.h>
 
@@ -688,4 +689,5 @@ void __iar_file_Mtxunlock(__iar_Rmtx *mutex) /* Unlock a file lock */
     osMutexRelease(*(osMutexId_t*)*mutex);
 }
 
+#endif
 #endif
